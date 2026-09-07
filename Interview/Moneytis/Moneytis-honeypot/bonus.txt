@@ -1,0 +1,37 @@
+****
+Compliquer la tâche du scrapper avant de l’avoir repéré
+****
+
+Captcha : trop intrusive
+
+obligation de se logguer : idem, pas top
+
+encoded toutes les requêtes : pas intrusive mais complique la tâche de l’utilisateur normal qui voudrait par exemple faire un marque-page et pas top lorsque l’on suit un lien d’avoir un lien encodé
+
+
+****
+Pour le repérer
+****
+
+HTTP referer, permet de savoir d’où vient l’utilisateur/bot est arrivé là : pas toujours dispo mais peut donner un indice.
+
+trop de requêtes en peu de temps ou des requêtes pendant une période beaucoup trop grande , mais les bons scrapers change probablement leurs adresses IP ou passe par un proxy ou par un truc type Tor.
+
+Plus généralement, étudier son comportement, est-ce que ça navigation à du sens, et t-il normal que tel personne arrive directement ici ou passe de tel page a tel page ?
+
+Comment séparer good bot (e.g. google bot) from bad bot ? Apparement les bons bots fournirait des informations dans les headers (User agent), mais ne serait-il pas facile de mentir et se faire passer pour google ? 
+A voir mais google propose probablement un moyen de savoir que c’est lui. 
+En effet, il le fait (https://support.google.com/webmasters/answer/80553?hl=en)
+
+
+****
+Une fois repéré, on pourrait:
+****
+bloquer son IP (mais avec les ip dynamiques ca ne sera pas forcément très utile). et gardé en mémoire toutes les infos qu’on a de lui pour pouvoir les matcher avec de futurs “attaques”.
+
+lui renvoyer des infos qui ont l’air correct mais qui ne le sont pas (données du mois dernier ou d’il y a un an par exemple) ou ne livrer que les plus mauvaises solutions et faire comme si on ne l’avait pas remarqué (consomme des ressources “inutilement”) ou lui envoyer une fausse erreur
+
+tout en mettant volontairement du temps à répondre
+
+
+

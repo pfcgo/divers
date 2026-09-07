@@ -1,0 +1,11 @@
+TAO:
+
+:
+
+Split inner the DC group of web servers which communicate only to a subset of the memchache which connect to the DB
+Avoid switch bottleneck, avoid big all to all mess
+Sticky user to avoid reloading the same cache for the same user on a different cache
+
+Leader caches, intermediate between all caches and the DB to protect the DB from thundering herds
+Write path: WRITE THROUGH cache: web server send SET to cache, which send it to leader cache, which send it to DB which ack. Leader cache ack back to cache which ack back to server
+			After write, leader cache tell other caches to refill the data (do not send it right away because 1: useless if not present, 2: idempotent operations)

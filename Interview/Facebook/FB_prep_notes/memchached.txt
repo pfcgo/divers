@@ -1,0 +1,41 @@
+memchache is a distributed memcached by facebook
+
+items distibuted across the memcached servers using consistent hashing
+
+
+cache look aside
+	GET: (client send a get request to the memcached, if cache miss, get to the DB, then SET to the memcached)
+	WRITE: client write directly to the db and DELETE the cache entry (delete is idempotent, avoid race conditions)
+	
+	GET and Delete done with TCP, Get with UDP (if UDP failure or timeout: considered as cache miss, but do not SET to prevent overloaded cache)
+	
+	
+For big requests (when a client needs a lot of GET at Once, there is a dynamic maximum number of element which are queried at once, when successful: window get bigger, otherwise, smaller)
+
+Avoiding stale data:
+	When a cache miss, we read in the DB/HDFS/... and set it in the cache.
+	Lease: Here when a cache miss occurs, the memcache give a token to the clients giving him and only him the right to write in the cache for the next 10 seconds
+			if someone ask for the cached value within that time, it will have to wait until the token owner finished to read the DB and updated the cache
+			
+Different pool of memcached:
+	For example, we may provision a small pool for keys that are accessed frequently
+	but for which a cache miss is inexpensive.
+	We may also provision a large pool for infrequently accessed keys for
+	which cache misses are prohibitively expensive.
+	
+	We choose
+	to replicate a category of keys within a pool when (1)
+	the application routinely fetches many keys simultaneously,
+	(2) the entire data set fits in one or two memcached
+	servers and (3) the request rate is much higher than what
+	a single server can manage
+	
+If a memcached is unvailable (no answer from a get):
+	To avoid overloading the DB/HDSF/...
+	Will try instead a special pool of idle memcache (idle to avoid overloading other servers): corst of a server is a big part the energy, so it is not so bad to have unused server
+	
+Avoid scaling cluster too much:
+	too much machines is not always good (TCP Incast: too much request can be handled by rack "routers" but TCP TTL is too long, even if now freed, it has to wait for new requests)
+	Instead, create a new independent region
+
+Cold start: when a new cluster is up, the client ask another cluster instead of failure instead of DB/HDFS/..

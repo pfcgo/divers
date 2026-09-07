@@ -1,0 +1,13 @@
+cassandra as a peer2peer arcitechture (gossip): no single point of failure
+
+Fast write centered: conflict are solved at read time
+tunable consistency: strong consistency if (number of node read + number of node written) > replication factor, if not: eventual consistency
+
+column no sql database:
+
+for each row: there is a <column, value> sorted dict (sparse, no need to predefined columns)
+row are sorted (and hashed for uniformity)
+
+all disk write are sequential: only append operations
+No reading before writing
+

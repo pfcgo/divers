@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<body>
+
+<div data-ng-app="ngApp" data-ng-controller="ngCtrl">
+	<h1>{{result}}</h1>
+	<h1>{{error}}</h1>
+</div>
+
+<script>
+var app = angular.module('ngApp', []);
+app.controller('ngCtrl', function($scope, $http) {
+	var timestamp = Date.now();
+	var cryptoKey = timestamp * 2 - 996875421548; // In order to decrypt the timestamp, we will need to be able to retrieve the original timestamp.
+	timestamp += 15015848648; // to be replaced with robust encryption (RSA or so)
+	var request = "http://localhost/api/ExchangeRates?countryFrom=FR&countryTo=MX&currencyFrom=EUR&currencyTo=MXN&paymentAmount=1000&t128s=" + timestamp + "&c256y=" + cryptoKey;
+	$http.get(request)
+	.then(function mySucces(response) {
+		$scope.result = response.data;
+	}, function myError(response) {
+		$scope.error = "ERROR: " + response.statusText;
+	});
+});
+</script>
+
+</body>
+</html>
+

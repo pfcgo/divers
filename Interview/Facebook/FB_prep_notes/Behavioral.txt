@@ -1,0 +1,73 @@
+Behavioral – (https://www.youtube.com/watch?v=PJKYqLP6MRE)
+ 
+
+The purpose of this interview is to assess whether you will be successful working within the Facebook environment. There are fundamentally different company cultures and ways in which companies work, and while some super amazing engineers may be very successful in other company environments, they ultimately may not succeed in our environment. The purpose of every question is to assess your skills, professional maturity, and strengths and weaknesses in working within a technical organization. You will be assessed over eight areas, namely;
+
+ 
+
+Intrinsic motivations : 
+- Facebook technical challenge.
+- Facebook hardest interview process, it is a nice challenge and i can expect to work with brillant people and learn a lot.
+- I think facebook could do much much more, I want to be in.
+
+Empathy
+
+Ability to be proactive; get started
+- I started the visito after checking the problem of app2web team
+
+Perseverance, works past obstacles; finishes
+- Visito, took 1 year, 6 months convincing people, 6 months of coding with different team involved
+
+Able to work in an unstructured environment
+
+Conflict resolution – How you deal with conflict and disagreements with colleagues and managers.
+
+Growth
+- I follow cclass on coursera
+
+Communication skills
+ 
+
+When answering these questions we are looking for you to give specific examples. We’ll be looking at your leadership experience, this could consist of a number of things from technical leadership, direction of projects or products, making architectural and design decisions to mentoring engineers and people management. We’re interested in your passions and what you’re motivated by, things like; What would you like to work on at Facebook if you could work on anything the and problems you enjoy solving. We’re looking at your current role, what you’re doing, your ownership and the impact you have had. Where you have learnt from past mistakes, where you have taken feedback on-board and acted on it.
+
+ 
+There were a before and an after Criteo. At my previous previous job, I was quite average and I was satisfied with it. After a while I decided to change it and be more "proactive", but it was not really possible at misys (old dinausore where we can not change anything), so had to switch 
+ 
+It’s a very thorough and deep conversation that requires you to communicate well, come with excellent examples of your own experience and ultimately an opportunity to really impress the interviewer; are you smart, passionate, introspective and empathetic? Many candidates make the mistake of not preparing well for this interview, please make sure you study and remain focused throughout.
+
+ 
+
+Some examples questions are:
+
+ 
+
+Can you give an example of a valuable piece of feedback that you have received?
+- Speak more with product
+- Get involded in long term plan (it really made me more involded in what was going on in the company)
+
+
+Describe a time where you had a disagreement or conflict within your team.
+- Black Friday, we are afraid to change anything, but we are bad, convincing little by little the team.
+
+How would your co-workers describe you?
+- Always eager to do stuff which get out of the routine
+
+Can you describe a situation where you had to work with a decision that you didn't agree with?
+- For a change impacting a very important business metric, my N+1 and n+2 said to do it without warning, no bother with emails
+- priority OKR
+
+Describe a technical mistake you have made recently?
+- Big refacto, not enough testing
+
+What's the most difficult/challenging problem you have had to solve?
+- Visito
+
+If things aren’t going to plan, how do you move yourself/your projects forward?
+- See what is blocking and provide/ask help
+
+How do you seek out opportunities? (we really like candidates who are proactive in fixing/improving things)
+- Talking around coffee or doing voyagers
+
+You can expect to be asked "what would you like to do at Facebook?" so be prepared to talk specifically about your interests and how they relate to Facebook as a tech company and/or as a product.
+We are looking for go-getters / people who can direct themselves and seek out opportunities.  Think of some examples where you have been proactive on seeking out opportunities/solving problems without being told to do this.
+You can also expect 1 short additional coding problem at the end of this interview.
